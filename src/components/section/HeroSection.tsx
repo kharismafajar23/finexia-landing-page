@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary-soft/70 blur-3xl" />
       <div className="container-px relative mx-auto grid max-w-7xl gap-12 py-16 lg:grid-cols-2 lg:py-24">
         <div
-          className={`flex flex-col justify-center transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`flex flex-col justify-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div>
             <Pill
@@ -54,7 +54,7 @@ const HeroSection = () => {
             </span>
           </h1>
           <p
-            className={`mt-5 max-w-xl text-sm/5 text-muted-foreground transition-all duration-700 delay-100 ease-out text-justify ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`mt-5 max-w-xl text-sm/5 text-muted-foreground transition-all duration-1000 delay-100 ease-out text-justify ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <span className="font-bold">Kelola keuangan,</span> stok barang, dan
             operasional bisnis dalam satu sistem terintegrasi. Tidak perlu lagi
@@ -62,7 +62,7 @@ const HeroSection = () => {
             otomatis, dan siap membantu Anda mengambil keputusan lebih cepat.
           </p>
           <ul
-            className={`hidden md:block mt-6 space-y-3 text-sm md:text-base transition-all duration-700 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`hidden md:block mt-6 space-y-3 text-sm md:text-base transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             {heroPoint.map((item, index) => (
               <li key={index} className="flex items-start gap-3">
@@ -74,7 +74,7 @@ const HeroSection = () => {
             ))}
           </ul>
           <div
-            className={`mt-8 flex flex-wrap items-center gap-4 transition-all duration-700 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`mt-8 flex flex-wrap items-center gap-4 transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <Button endIcon={<ArrowRight className="h-4 w-4" />}>
               Coba Gratis Sekarang
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </Button>
           </div>
           <div
-            className={`mt-6 flex items-center gap-3 text-xs text-muted-foreground transition-all duration-700 delay-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`mt-6 flex items-center gap-3 text-xs text-muted-foreground transition-all duration-1000 delay-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (

@@ -1,3 +1,6 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import React from "react";
 import Pill from "../ui/pill";
 import SectionTitle from "../ui/section-title";
@@ -13,6 +16,7 @@ import {
 } from "lucide-react";
 
 const InsightSection = () => {
+  const { ref: insightRef, isVisible } = useScrollReveal<HTMLElement>();
   const articles = [
     { t: "5 Tanda Bisnis Anda Butuh Sistem Terintegrasi", c: "Operasional" },
     { t: "Cara Menyatukan Data dari Banyak Cabang", c: "Tips" },
@@ -21,9 +25,11 @@ const InsightSection = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section ref={insightRef} className="py-20">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
+        <div
+          className={`mx-auto max-w-3xl text-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <Pill
             text="Insight Finexia"
             startIcon={<Book size={18} strokeWidth={2.25} />}
@@ -40,7 +46,9 @@ const InsightSection = () => {
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-4">
-          <div className="md:col-span-2 md:row-span-2">
+          <div
+            className={`md:col-span-2 md:row-span-2 transition-all duration-1000 delay-100 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          >
             <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-foreground text-background">
               <div className="relative grid h-56 place-items-center bg-gradient-to-br from-primary to-primary/60">
                 <Sparkles className="h-16 w-16 text-primary-foreground/60" />
@@ -71,7 +79,8 @@ const InsightSection = () => {
           {articles.map((a, i) => (
             <div
               key={a.t}
-              className="overflow-hidden rounded-2xl border border-border bg-background"
+              className={`overflow-hidden rounded-2xl border border-border bg-background transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDelay: `${200 + i * 100}ms` }}
             >
               <div
                 className={`h-28 ${i % 2 === 0 ? "bg-primary-soft" : "bg-muted"} grid place-items-center`}

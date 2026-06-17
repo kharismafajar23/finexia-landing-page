@@ -67,7 +67,9 @@ const KonsultasiSection = () => {
     <section ref={konsultasiRef} className="py-20">
       <div className="container-px mx-auto max-w-7xl">
         <div className="grid grid-cols-12 gap-6 items-center mb-4">
-          <div className="col-span-12 lg:col-span-6">
+          <div
+            className={`col-span-12 lg:col-span-6 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          >
             <Pill
               text="Saatnya Semua Jadi Lebih Mudah"
               startIcon={<SquareStar size={18} strokeWidth={2.25} />}
@@ -120,7 +122,9 @@ const KonsultasiSection = () => {
               </span>
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-6">
+          <div
+            className={`col-span-12 lg:col-span-6 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+          >
             <Image
               src={KonsultasiImage}
               alt="Konsultasi tentang Finexia"
@@ -130,7 +134,9 @@ const KonsultasiSection = () => {
             />
           </div>
         </div>
-        <div className="w-full rounded-2xl border-3 border-border bg-background p-5">
+        <div
+          className={`w-full rounded-2xl border-3 border-border bg-background p-5 transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <h3 className="text-center text-slate-800 font-semibold mb-5">
             Dipercaya 100+ bisnis di Indonesia
           </h3>

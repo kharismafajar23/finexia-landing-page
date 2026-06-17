@@ -78,7 +78,7 @@ const TrustSection = () => {
     >
       <div className="container-px mx-auto grid max-w-7xl grid-cols-12 gap-4 md:gap-14 items-center">
         <div
-          className={`col-span-12 lg:col-span-6 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`col-span-12 lg:col-span-6 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <Pill
             text="Dipercaya & Direkomendasikan"
@@ -122,7 +122,7 @@ const TrustSection = () => {
             {client.map((item, index) => (
               <div
                 key={index}
-                className={`col-span-6 sm:col-span-3 place-items-center rounded-lg border border-border bg-background text-xs font-bold tracking-wider text-muted-foreground transition-all duration-500 ease-out p-3 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`col-span-6 sm:col-span-3 place-items-center rounded-lg border border-border bg-background text-xs font-bold tracking-wider text-muted-foreground transition-all duration-700 ease-out p-3 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                 style={{ transitionDelay: `${150 + index * 80}ms` }}
               >
                 <Image

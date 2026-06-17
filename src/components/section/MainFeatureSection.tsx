@@ -1,3 +1,6 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import React from "react";
 import Pill from "../ui/pill";
 import {
@@ -22,6 +25,7 @@ import PlatformImage from "@/assets/platform-img.png";
 import LogoRed from "@/assets/logo/logo-red.png";
 
 const MainFeatureSection = () => {
+  const { ref: mainFeatureRef, isVisible } = useScrollReveal<HTMLElement>();
   const mainFeature = [
     {
       icon: <ChartNoAxesCombined />,
@@ -138,9 +142,11 @@ const MainFeatureSection = () => {
   ];
 
   return (
-    <section className="relative bg-muted/30 py-20">
+    <section ref={mainFeatureRef} className="relative bg-muted/30 py-20">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
+        <div
+          className={`mx-auto max-w-3xl text-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <Pill text="Fitur Utama Finexia"></Pill>
           <SectionTitle className="mb-4">
             Semua yang Anda butuhkan,
@@ -158,8 +164,9 @@ const MainFeatureSection = () => {
         <div className="grid grid-cols-12 gap-5 mt-10">
           {mainFeature.map((item, index) => (
             <div
-              className="col-span-12 sm:col-span-6 lg:col-span-4"
+              className={`col-span-12 sm:col-span-6 lg:col-span-4 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
               key={index}
+              style={{ transitionDelay: `${100 + index * 100}ms` }}
             >
               <div className="group rounded-xl border-3 border-gray-300/30 bg-background p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl h-full">
                 <div className="flex justify-between items-center">
@@ -203,7 +210,7 @@ const MainFeatureSection = () => {
           ))}
         </div>
 
-        <div className="mt-10 rounded-3xl border-3 border-primary-soft/50 bg-background p-6 md:p-10">
+        <div className={`mt-10 rounded-3xl border-3 border-primary-soft/50 bg-background p-6 md:p-10 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="h-1 w-20 bg-primary mb-4"></div>
           <div className="font-bold">
             Satu Platform,{" "}
@@ -240,7 +247,7 @@ const MainFeatureSection = () => {
           </div>
         </div>
 
-        <div className="mt-10 rounded-3xl border-3 border-primary-soft/50 bg-primary-soft/30 p-6 md:p-10 hidden lg:block">
+        <div className={`mt-10 rounded-3xl border-3 border-primary-soft/50 bg-primary-soft/30 p-6 md:p-10 hidden lg:block transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="grid grid-cols-5">
             <div className="flex items-center gap-3">
               <Image

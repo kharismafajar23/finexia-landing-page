@@ -1,3 +1,6 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import React from "react";
 import Pill from "../ui/pill";
 import SectionTitle from "../ui/section-title";
@@ -18,6 +21,7 @@ import Image from "next/image";
 import LogoRed from "@/assets/logo/logo-red.png";
 
 const UseCaseSection = () => {
+  const { ref: useCaseRef, isVisible } = useScrollReveal<HTMLElement>();
   const industries = [
     {
       icon: <ShoppingCart />,
@@ -132,9 +136,11 @@ const UseCaseSection = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section ref={useCaseRef} className="py-20">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
+        <div
+          className={`mx-auto max-w-3xl text-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <Pill text="Use Case Industri"></Pill>
           <SectionTitle className="mb-4">
             Hadir untuk Berbagai Industri,
@@ -150,7 +156,11 @@ const UseCaseSection = () => {
 
         <div className="grid grid-cols-12 gap-5 mt-10">
           {industries.map((item, index) => (
-            <div key={index} className="col-span-6 md:col-span-4 lg:col-span-2">
+            <div
+              key={index}
+              className={`col-span-6 md:col-span-4 lg:col-span-2 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDelay: `${100 + index * 80}ms` }}
+            >
               <div className="group rounded-xl border-3 border-gray-300/30 bg-background p-4 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl h-full">
                 <div
                   className="w-15 h-15 rounded-2xl hidden lg:flex mx-auto"
@@ -189,7 +199,7 @@ const UseCaseSection = () => {
           ))}
         </div>
 
-        <div className="mt-10 rounded-3xl bg-primary-soft/30 p-6 hidden lg:block">
+        <div className={`mt-10 rounded-3xl bg-primary-soft/30 p-6 hidden lg:block transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="grid grid-cols-5 gap-4">
             <div className="flex items-center gap-3">
               <Image

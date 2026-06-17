@@ -1,3 +1,6 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import React from "react";
 import Pill from "../ui/pill";
 import {
@@ -16,6 +19,7 @@ import WhyUsImage from "@/assets/why-choose-us-img.png";
 import LogoRed from "@/assets/logo/logo-red.png";
 
 const WhyUsSection = () => {
+  const { ref: whyUsRef, isVisible } = useScrollReveal<HTMLElement>();
   const features = [
     {
       icon: <Puzzle />,
@@ -65,11 +69,13 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden py-20">
+    <section ref={whyUsRef} className="relative overflow-hidden py-20">
       <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-primary-soft blur-3xl" />
       <div className="container-px relative mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-10">
-          <div className="col-span-2 lg:col-span-1">
+          <div
+            className={`col-span-2 lg:col-span-1 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          >
             <Pill
               text="Mengapa Finexia Tepat untuk Organisasi Anda"
               startIcon={<ShieldCheck size={18} strokeWidth={2.25} />}
@@ -92,7 +98,9 @@ const WhyUsSection = () => {
               height={896}
             />
           </div>
-          <div className="col-span-2 lg:col-span-1 mb-10">
+          <div
+            className={`col-span-2 lg:col-span-1 mb-10 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          >
             <div className="grid grid-cols-2 gap-2">
               {features.map((item, index) => (
                 <div className="col-span-2 sm:col-span-1" key={index}>
@@ -123,7 +131,7 @@ const WhyUsSection = () => {
           </div>
         </div>
 
-        <div className="bg-slate-200 p-5 rounded-sm w-full lg:w-5/6 mx-auto">
+        <div className={`bg-slate-200 p-5 rounded-sm w-full lg:w-5/6 mx-auto transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="flex flex-col sm:flex-row gap-5">
             <div className="flex items-center gap-3">
               <div className="bg-slate-700 rounded-sm sm:rounded-2xl">

@@ -64,7 +64,7 @@ const FaqSection = () => {
     <section ref={faqRef} className="py-20">
       <div className="container-px mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.2fr]">
         <div
-          className={`transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <Pill
             text="FAQ"
@@ -109,7 +109,7 @@ const FaqSection = () => {
             <button
               key={index}
               onClick={() => setOpen(open === index ? null : index)}
-              className={`w-full rounded-2xl border-3 border-border bg-background p-5 text-left transition-all duration-500 ease-out hover:border-primary/40 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              className={`w-full rounded-2xl border-3 border-border bg-background p-5 text-left transition-all duration-700 ease-out hover:border-primary/40 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="flex items-center justify-between gap-4">

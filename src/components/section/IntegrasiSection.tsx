@@ -1,3 +1,6 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import {
   ArrowLeftRight,
   ChartNoAxesColumnIncreasing,
@@ -20,6 +23,7 @@ import IntegrasiImg from "@/assets/integrasi-img.png";
 import Image from "next/image";
 
 const IntegrasiSection = () => {
+  const { ref: integrasiRef, isVisible } = useScrollReveal<HTMLElement>();
   const integrations = [
     { i: Database, l: "Database" },
     { i: ShoppingCart, l: "Marketplace" },
@@ -65,10 +69,12 @@ const IntegrasiSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden py-20">
+    <section ref={integrasiRef} className="relative overflow-hidden py-20">
       <div className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-primary-soft blur-3xl" />
       <div className="container-px relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
-        <div className="relative">
+        <div
+          className={`relative transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+        >
           <Image
             src={IntegrasiImg}
             alt="Integrasi Sistem Finexia"
@@ -77,7 +83,9 @@ const IntegrasiSection = () => {
             height={100}
           />
         </div>
-        <div>
+        <div
+          className={`transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <Pill text="Integrasi Tanpa Batas"></Pill>
           <SectionTitle className="mb-4">
             Finexia Terintegrasi dengan Aplikasi Apa Pun,
@@ -98,7 +106,7 @@ const IntegrasiSection = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl bg-primary-soft/50 shadow-sm p-4">
+          <div className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl bg-primary-soft/50 shadow-sm p-4 transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             {benefit.map((item, index) => (
               <div
                 key={index}
@@ -115,7 +123,7 @@ const IntegrasiSection = () => {
         </div>
       </div>
       <div className="container-px mx-auto mt-10 max-w-7xl">
-        <div className="rounded-lg border border-primary/80 bg-primary-soft/20 px-6 py-4 w-6/7 mx-auto">
+        <div className={`rounded-lg border border-primary/80 bg-primary-soft/20 px-6 py-4 w-6/7 mx-auto transition-all duration-1000 delay-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="flex items-center gap-4">
             <div>
               <span className="grid h-12 w-12 place-items-center rounded-full bg-primary-soft text-primary">

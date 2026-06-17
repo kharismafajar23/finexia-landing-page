@@ -1,3 +1,6 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import React from "react";
 import Pill from "../ui/pill";
 import {
@@ -15,6 +18,7 @@ import Image from "next/image";
 import DashboardImage from "@/assets/dashboard-img.png";
 
 const DashboardSection = () => {
+  const { ref: dashboardRef, isVisible } = useScrollReveal<HTMLElement>();
   const points = [
     "Ringkasan KPI penting dalam satu tampilan eksekutif",
     "Pantau performa bisnis real-time, kapan saja di mana saja",
@@ -47,10 +51,12 @@ const DashboardSection = () => {
     },
   ];
   return (
-    <section className="py-20">
+    <section ref={dashboardRef} className="py-20">
       <div className="container-px mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-8">
-          <div className="col-span-2 lg:col-span-1">
+          <div
+            className={`col-span-2 lg:col-span-1 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          >
             <Pill
               text="Dashboard Finexia"
               startIcon={<ScreenShare size={18} strokeWidth={2.25} />}
@@ -97,7 +103,9 @@ const DashboardSection = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-2 lg:col-span-1">
+          <div
+            className={`col-span-2 lg:col-span-1 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+          >
             <Image
               src={DashboardImage}
               alt="Integrasi Sistem Finexia"
@@ -108,7 +116,9 @@ const DashboardSection = () => {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl bg-primary-soft/50 shadow-sm px-4 py-10">
+        <div
+          className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl bg-primary-soft/50 shadow-sm px-4 py-10 transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           {benefit.map((item, index) => (
             <div className="flex items-center gap-3" key={index}>
               <div>

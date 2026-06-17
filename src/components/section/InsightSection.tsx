@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 const InsightSection = () => {
-  const { ref: insightRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: insightRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
   const articles = [
     { t: "5 Tanda Bisnis Anda Butuh Sistem Terintegrasi", c: "Operasional" },
     { t: "Cara Menyatukan Data dari Banyak Cabang", c: "Tips" },

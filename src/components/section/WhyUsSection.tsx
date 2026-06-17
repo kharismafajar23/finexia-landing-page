@@ -19,7 +19,7 @@ import WhyUsImage from "@/assets/why-choose-us-img.png";
 import LogoRed from "@/assets/logo/logo-red.png";
 
 const WhyUsSection = () => {
-  const { ref: whyUsRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: whyUsRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
   const features = [
     {
       icon: <Puzzle />,
@@ -99,11 +99,15 @@ const WhyUsSection = () => {
             />
           </div>
           <div
-            className={`col-span-2 lg:col-span-1 mb-10 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`col-span-2 lg:col-span-1 mb-10 transition-all duration-1000 delay-200 ease-out}`}
           >
             <div className="grid grid-cols-2 gap-2">
               {features.map((item, index) => (
-                <div className="col-span-2 sm:col-span-1" key={index}>
+                <div
+                  className={`col-span-2 sm:col-span-1 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                  key={index}
+                  style={{ transitionDelay: `${100 + index * 120}ms` }}
+                >
                   <div className="rounded-2xl border border-border bg-background p-5 transition hover:border-primary/40 hover:shadow-md h-full shadow">
                     <div className="flex items-center gap-4">
                       <div className="grid h-15 w-15 shrink-0 place-items-center rounded-full bg-primary-soft text-primary">
@@ -131,7 +135,9 @@ const WhyUsSection = () => {
           </div>
         </div>
 
-        <div className={`bg-slate-200 p-5 rounded-sm w-full lg:w-5/6 mx-auto transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div
+          className={`bg-slate-200 p-5 rounded-sm w-full lg:w-5/6 mx-auto transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <div className="flex flex-col sm:flex-row gap-5">
             <div className="flex items-center gap-3">
               <div className="bg-slate-700 rounded-sm sm:rounded-2xl">

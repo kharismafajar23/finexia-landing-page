@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const TrustSection = () => {
-  const { ref: trustRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: trustRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
 
   const trustPoints = [
     {

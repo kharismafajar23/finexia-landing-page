@@ -23,7 +23,7 @@ import IntegrasiImg from "@/assets/integrasi-img.png";
 import Image from "next/image";
 
 const IntegrasiSection = () => {
-  const { ref: integrasiRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: integrasiRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
   const integrations = [
     { i: Database, l: "Database" },
     { i: ShoppingCart, l: "Marketplace" },

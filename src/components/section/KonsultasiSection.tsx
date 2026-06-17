@@ -21,7 +21,7 @@ import Image from "next/image";
 import KonsultasiImage from "@/assets/konsultasi-img.png";
 
 const KonsultasiSection = () => {
-  const { ref: konsultasiRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: konsultasiRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
 
   const konsultasi1 = [
     {

@@ -21,7 +21,7 @@ import Image from "next/image";
 import LogoRed from "@/assets/logo/logo-red.png";
 
 const UseCaseSection = () => {
-  const { ref: useCaseRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: useCaseRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
   const industries = [
     {
       icon: <ShoppingCart />,
@@ -158,8 +158,8 @@ const UseCaseSection = () => {
           {industries.map((item, index) => (
             <div
               key={index}
-              className={`col-span-6 md:col-span-4 lg:col-span-2 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-              style={{ transitionDelay: `${100 + index * 80}ms` }}
+              className={`col-span-6 md:col-span-4 lg:col-span-2 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-9"}`}
+              style={{ transitionDelay: `${100 + index * 100}ms` }}
             >
               <div className="group rounded-xl border-3 border-gray-300/30 bg-background p-4 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl h-full">
                 <div
@@ -199,7 +199,9 @@ const UseCaseSection = () => {
           ))}
         </div>
 
-        <div className={`mt-10 rounded-3xl bg-primary-soft/30 p-6 hidden lg:block transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div
+          className={`mt-10 rounded-3xl bg-primary-soft/30 p-6 hidden lg:block transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <div className="grid grid-cols-5 gap-4">
             <div className="flex items-center gap-3">
               <Image

@@ -16,7 +16,7 @@ import Image from "next/image";
 import Button from "../ui/button";
 
 const HeroSection = () => {
-  const { ref: heroRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: heroRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
 
   const heroPoint = [
     {

@@ -20,7 +20,7 @@ import FaqImage from "@/assets/faq-img.png";
 
 const FaqSection = () => {
   const [open, setOpen] = useState<number | null>(0);
-  const { ref: faqRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: faqRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
 
   const faqs = [
     {

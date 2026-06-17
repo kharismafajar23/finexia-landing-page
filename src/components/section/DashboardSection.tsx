@@ -18,7 +18,7 @@ import Image from "next/image";
 import DashboardImage from "@/assets/dashboard-img.png";
 
 const DashboardSection = () => {
-  const { ref: dashboardRef, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref: dashboardRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
   const points = [
     "Ringkasan KPI penting dalam satu tampilan eksekutif",
     "Pantau performa bisnis real-time, kapan saja di mana saja",

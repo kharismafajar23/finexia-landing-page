@@ -101,7 +101,7 @@ const DashboardSection = () => {
             <Image
               src={DashboardImage}
               alt="Integrasi Sistem Finexia"
-              className="w-full max-w-xl drop-shadow-2xl mt-9"
+              className="w-full max-w-xl drop-shadow-2xl mt-9 mx-auto"
               width={1500}
               height={100}
             />

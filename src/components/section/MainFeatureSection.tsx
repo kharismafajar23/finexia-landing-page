@@ -209,7 +209,7 @@ const MainFeatureSection = () => {
             Satu Platform,{" "}
             <span className="text-primary">Kontrol Penuh Bisnis Anda</span>
           </div>
-          <div className="grid grid-cols-12 items-end">
+          <div className="grid grid-cols-12 items-end mt-3 sm:mt-0">
             <div className="col-span-12 lg:col-span-7">
               <div className="grid grid-cols-12 gap-3">
                 {controlItems.map((item, index) => (

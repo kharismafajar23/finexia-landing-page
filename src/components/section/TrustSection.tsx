@@ -76,7 +76,7 @@ const TrustSection = () => {
       ref={trustRef}
       className="border-y border-border/60 bg-muted/30 py-20"
     >
-      <div className="container-px mx-auto grid max-w-7xl grid-cols-12 gap-14 items-center">
+      <div className="container-px mx-auto grid max-w-7xl grid-cols-12 gap-4 md:gap-14 items-center">
         <div
           className={`col-span-12 lg:col-span-6 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
@@ -137,7 +137,7 @@ const TrustSection = () => {
           </div>
         </div>
         <div className="col-span-12 lg:col-span-6">
-          <div className="border-4 border-border rounded-xl px-10 pt-9 pb-20">
+          <div className="border-4 border-border rounded-xl px-5 md:px-10 pt-9 pb-20">
             <div className="text-center">
               <h3 className="uppercase text-primary font-bold mb-2">
                 Apa Kata Klien Kami

@@ -87,7 +87,7 @@ const WhyUsSection = () => {
             <Image
               src={WhyUsImage}
               alt="Mengapa memilih Finexia"
-              className="w-full max-w-xl drop-shadow-2xl mt-9"
+              className="w-full max-w-xl drop-shadow-2xl mt-9 mx-auto"
               width={1024}
               height={896}
             />
@@ -123,7 +123,7 @@ const WhyUsSection = () => {
           </div>
         </div>
 
-        <div className="bg-slate-200 p-5 rounded-sm w-full sm:w-5/6 mx-auto">
+        <div className="bg-slate-200 p-5 rounded-sm w-full lg:w-5/6 mx-auto">
           <div className="flex flex-col sm:flex-row gap-5">
             <div className="flex items-center gap-3">
               <div className="bg-slate-700 rounded-sm sm:rounded-2xl">
@@ -142,7 +142,7 @@ const WhyUsSection = () => {
               <h3 className="hidden sm:block text-2xl text-slate-700 font-bold mb-6">
                 Satu Platform Terintegerasi untuk Semua Kebutuhan Bisnis Anda
               </h3>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 mt-4">
                 {bullet.map((item, index) => (
                   <div key={index}>
                     <BadgeCheck

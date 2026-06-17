@@ -61,7 +61,7 @@ const FaqSection = () => {
     },
   ];
   return (
-    <section ref={faqRef} className="py-20">
+    <section id="faq" ref={faqRef} className="py-20">
       <div className="container-px mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.2fr]">
         <div
           className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}

@@ -25,7 +25,7 @@ const InsightSection = () => {
   ];
 
   return (
-    <section ref={insightRef} className="py-20">
+    <section id="insight" ref={insightRef} className="py-20">
       <div className="container-px mx-auto max-w-7xl">
         <div
           className={`mx-auto max-w-3xl text-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}

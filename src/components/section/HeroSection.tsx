@@ -32,8 +32,10 @@ const HeroSection = () => {
       name: "Mudah Digunakan oleh Semua Tim",
     },
   ];
+
+  const profile = ["hero-1.png", "hero-2.png", "hero-3.png"];
   return (
-    <section ref={heroRef} className="relative overflow-hidden">
+    <section id="hero" ref={heroRef} className="relative overflow-hidden">
       <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary-soft/70 blur-3xl" />
       <div className="container-px relative mx-auto grid max-w-7xl gap-12 py-16 lg:grid-cols-2 lg:py-24">
         <div
@@ -87,11 +89,19 @@ const HeroSection = () => {
             className={`mt-6 flex items-center gap-3 text-xs text-muted-foreground transition-all duration-1000 delay-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
+              {profile.map((item, index) => (
                 <div
-                  key={i}
-                  className="h-7 w-7 rounded-full border-2 border-background bg-gradient-to-br from-primary/40 to-primary"
-                />
+                  key={index}
+                  className="rounded-full border-2 border-background"
+                >
+                  <Image
+                    src={`/img/client/${item}`}
+                    alt="profile-hero"
+                    width={40}
+                    height={40}
+                    className="w-7 h-7 object-cover"
+                  ></Image>
+                </div>
               ))}
             </div>
             Dipercaya 100+ perusahaan di Indonesia

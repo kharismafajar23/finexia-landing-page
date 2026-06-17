@@ -69,7 +69,11 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section ref={whyUsRef} className="relative overflow-hidden py-20">
+    <section
+      id="keunggulan"
+      ref={whyUsRef}
+      className="relative overflow-hidden py-20"
+    >
       <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-primary-soft blur-3xl" />
       <div className="container-px relative mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-10">

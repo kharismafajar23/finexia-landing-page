@@ -64,7 +64,7 @@ const KonsultasiSection = () => {
     },
   ];
   return (
-    <section ref={konsultasiRef} className="py-20">
+    <section id="order" ref={konsultasiRef} className="py-20">
       <div className="container-px mx-auto max-w-7xl">
         <div className="grid grid-cols-12 gap-6 items-center mb-4">
           <div

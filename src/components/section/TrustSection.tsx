@@ -73,6 +73,7 @@ const TrustSection = () => {
 
   return (
     <section
+      id="testimoni"
       ref={trustRef}
       className="border-y border-border/60 bg-muted/30 py-20"
     >

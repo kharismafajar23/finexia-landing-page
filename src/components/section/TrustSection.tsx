@@ -1,7 +1,7 @@
 "use client";
 
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { ShieldCheck, Trophy } from "lucide-react";
+import { Quote, ShieldCheck, Trophy } from "lucide-react";
 import React from "react";
 import Pill from "../ui/pill";
 import SectionTitle from "../ui/section-title";
@@ -10,7 +10,7 @@ import mapIndonesia from "@/assets/indonesia-map.png";
 import Image from "next/image";
 import { testimoni } from "@/constant/testimoni";
 
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -18,7 +18,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const TrustSection = () => {
-  const { ref: trustRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: trustRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
 
   const trustPoints = [
     {
@@ -75,8 +77,15 @@ const TrustSection = () => {
     <section
       id="testimoni"
       ref={trustRef}
-      className="border-y border-border/60 bg-muted/30 py-20"
+      className="border-y border-border/60 bg-muted/30 py-20 relative overflow-hidden"
     >
+      <Image
+        src="/img/decoration/decoration-2.png"
+        alt="decoration"
+        width={400}
+        height={400}
+        className="absolute left-0 bottom-20 h-180 w-full md:h-2/5 lg:left-55 lg:h-4/5 md:w-auto"
+      ></Image>
       <div className="container-px mx-auto grid max-w-7xl grid-cols-12 gap-4 md:gap-14 items-center">
         <div
           className={`col-span-12 lg:col-span-6 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -116,8 +125,8 @@ const TrustSection = () => {
             src={mapIndonesia}
             alt="Peta Client Finexia"
             className="w-full max-w-xl drop-shadow-2xl mx-auto"
-            width={1024}
-            height={896}
+            width={1300}
+            height={1000}
           />
           <div className="mt-8 grid grid-cols-12 gap-3">
             {client.map((item, index) => (
@@ -138,7 +147,13 @@ const TrustSection = () => {
           </div>
         </div>
         <div className="col-span-12 lg:col-span-6">
-          <div className="border-4 border-border rounded-xl px-5 md:px-10 pt-9 pb-20">
+          <div className="bg-white border-4 border-border rounded-xl px-5 md:px-10 pt-9 pb-20 relative">
+            <div className="absolute top-6 left-6">
+              <Quote size={40} className="text-primary-soft rotate-180" />
+            </div>
+            <div className="absolute bottom-6 right-6">
+              <Quote size={40} className="text-primary-soft" />
+            </div>
             <div className="text-center">
               <h3 className="uppercase text-primary font-bold mb-2">
                 Apa Kata Klien Kami
@@ -148,7 +163,7 @@ const TrustSection = () => {
               </p>
 
               <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation

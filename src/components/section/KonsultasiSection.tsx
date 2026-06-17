@@ -19,9 +19,12 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import Link from "next/link";
 import Image from "next/image";
 import KonsultasiImage from "@/assets/konsultasi-img.png";
+import DotDecoration from "../ui/dot-decoration";
 
 const KonsultasiSection = () => {
-  const { ref: konsultasiRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: konsultasiRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
 
   const konsultasi1 = [
     {
@@ -64,7 +67,10 @@ const KonsultasiSection = () => {
     },
   ];
   return (
-    <section id="order" ref={konsultasiRef} className="py-20">
+    <section id="order" ref={konsultasiRef} className="py-20 relative">
+      <div className="absolute top-5 right-5 sm:top-10 sm:right-10 lg:top-60 lg:right-100">
+        <DotDecoration aside={6} down={3}></DotDecoration>
+      </div>
       <div className="container-px mx-auto max-w-7xl">
         <div className="grid grid-cols-12 gap-6 items-center mb-4">
           <div

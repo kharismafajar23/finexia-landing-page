@@ -14,9 +14,12 @@ import heroImage from "@/assets/hero-img.png";
 import Pill from "../ui/pill";
 import Image from "next/image";
 import Button from "../ui/button";
+import DotDecoration from "../ui/dot-decoration";
 
 const HeroSection = () => {
-  const { ref: heroRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: heroRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
 
   const heroPoint = [
     {
@@ -36,8 +39,17 @@ const HeroSection = () => {
   const profile = ["hero-1.png", "hero-2.png", "hero-3.png"];
   return (
     <section id="hero" ref={heroRef} className="relative overflow-hidden">
-      <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary-soft/70 blur-3xl" />
-      <div className="container-px relative mx-auto grid max-w-7xl gap-12 py-16 lg:grid-cols-2 lg:py-24">
+      <div className="absolute bottom-5 right-5 sm:bottom-10 sm:right-10 lg:bottom-30 lg:right-30">
+        <DotDecoration aside={6} down={3}></DotDecoration>
+      </div>
+      <Image
+        src="/img/decoration/decoration-1.png"
+        alt="hero-decoration"
+        width={400}
+        height={400}
+        className="absolute right-0 bottom-30 h-90 md:h-2/5 lg:h-4/5 w-auto"
+      ></Image>
+      <div className="container-px relative mx-auto grid max-w-7xl gap-8 py-16 lg:grid-cols-2 lg:py-24">
         <div
           className={`flex flex-col justify-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >

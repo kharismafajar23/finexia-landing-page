@@ -16,9 +16,12 @@ import SectionTitle from "../ui/section-title";
 import SectionDescription from "../ui/section-description";
 import Image from "next/image";
 import DashboardImage from "@/assets/dashboard-img.png";
+import DotDecoration from "../ui/dot-decoration";
 
 const DashboardSection = () => {
-  const { ref: dashboardRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: dashboardRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
   const points = [
     "Ringkasan KPI penting dalam satu tampilan eksekutif",
     "Pantau performa bisnis real-time, kapan saja di mana saja",
@@ -51,7 +54,10 @@ const DashboardSection = () => {
     },
   ];
   return (
-    <section ref={dashboardRef} className="py-20">
+    <section ref={dashboardRef} className="py-20 relative overflow-hidden">
+      <div className="absolute left-0 hidden lg:block">
+        <DotDecoration aside={4} down={3}></DotDecoration>
+      </div>
       <div className="container-px mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-8">
           <div
@@ -104,8 +110,15 @@ const DashboardSection = () => {
             </div>
           </div>
           <div
-            className={`col-span-2 lg:col-span-1 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+            className={`col-span-2 lg:col-span-1 transition-all duration-1000 delay-200 ease-out relative ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
           >
+            <Image
+              src="/img/decoration/decoration-6.png"
+              alt="decoration"
+              width={400}
+              height={400}
+              className="absolute -top-7 -right-10 sm:-right-15"
+            ></Image>
             <Image
               src={DashboardImage}
               alt="Integrasi Sistem Finexia"

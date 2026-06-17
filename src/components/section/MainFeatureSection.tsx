@@ -23,9 +23,12 @@ import SectionDescription from "../ui/section-description";
 import Image from "next/image";
 import PlatformImage from "@/assets/platform-img.png";
 import LogoRed from "@/assets/logo/logo-red.png";
+import DotDecoration from "../ui/dot-decoration";
 
 const MainFeatureSection = () => {
-  const { ref: mainFeatureRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: mainFeatureRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
   const mainFeature = [
     {
       icon: <ChartNoAxesCombined />,
@@ -142,7 +145,23 @@ const MainFeatureSection = () => {
   ];
 
   return (
-    <section ref={mainFeatureRef} className="relative bg-muted/30 py-20">
+    <section
+      ref={mainFeatureRef}
+      className="relative bg-muted/30 py-20 overflow-hidden"
+    >
+      <div className="absolute top-5 left-5 sm:top-10 sm:left-10 lg:top-30 lg:left-80">
+        <DotDecoration aside={4} down={3}></DotDecoration>
+      </div>
+      <Image
+        src="/img/decoration/decoration-4.png"
+        alt="decoration"
+        width={400}
+        height={400}
+        className="absolute top-0 -right-35 lg:right-0"
+      ></Image>
+      <div className="absolute top-[40%] right-5 sm:right-10 lg:right-75">
+        <DotDecoration aside={4} down={3}></DotDecoration>
+      </div>
       <div className="container-px mx-auto max-w-7xl">
         <div
           className={`mx-auto max-w-3xl text-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-"}`}
@@ -214,8 +233,8 @@ const MainFeatureSection = () => {
           className={`mt-10 rounded-3xl border-3 border-primary-soft/50 bg-background p-6 md:p-10 transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="h-1 w-20 bg-primary mb-4"></div>
-          <div className="font-bold">
-            Satu Platform,{" "}
+          <div className="font-bold mb-3 lg:mb-0">
+            Satu Platform, <br />
             <span className="text-primary">Kontrol Penuh Bisnis Anda</span>
           </div>
           <div className="grid grid-cols-12 items-end mt-3 sm:mt-0">

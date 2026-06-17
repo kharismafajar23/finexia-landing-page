@@ -21,9 +21,12 @@ import SectionTitle from "../ui/section-title";
 import SectionDescription from "../ui/section-description";
 import IntegrasiImg from "@/assets/integrasi-img.png";
 import Image from "next/image";
+import DotDecoration from "../ui/dot-decoration";
 
 const IntegrasiSection = () => {
-  const { ref: integrasiRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: integrasiRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
   const integrations = [
     { i: Database, l: "Database" },
     { i: ShoppingCart, l: "Marketplace" },
@@ -70,6 +73,16 @@ const IntegrasiSection = () => {
 
   return (
     <section ref={integrasiRef} className="relative overflow-hidden py-20">
+      <Image
+        src="/img/decoration/decoration-5.png"
+        alt="decoration"
+        width={400}
+        height={400}
+        className="absolute top-10 left-0 hidden lg:block"
+      ></Image>
+      <div className="absolute bottom-5 left-5 sm:bottom-10 sm:left-10 lg:bottom-30 lg:left-60">
+        <DotDecoration aside={6} down={3}></DotDecoration>
+      </div>
       <div className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-primary-soft blur-3xl" />
       <div className="container-px relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <div
@@ -106,7 +119,9 @@ const IntegrasiSection = () => {
               </li>
             ))}
           </ul>
-          <div className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl bg-primary-soft/50 shadow-sm p-4 transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+          <div
+            className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl bg-primary-soft/50 shadow-sm p-4 transition-all duration-1000 delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          >
             {benefit.map((item, index) => (
               <div
                 key={index}
@@ -123,7 +138,9 @@ const IntegrasiSection = () => {
         </div>
       </div>
       <div className="container-px mx-auto mt-10 max-w-7xl">
-        <div className={`rounded-lg border border-primary/80 bg-primary-soft/20 px-6 py-4 w-6/7 mx-auto transition-all duration-1000 delay-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div
+          className={`rounded-lg border border-primary/80 bg-primary-soft/20 px-6 py-4 w-6/7 mx-auto transition-all duration-1000 delay-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
           <div className="flex items-center gap-4">
             <div>
               <span className="grid h-12 w-12 place-items-center rounded-full bg-primary-soft text-primary">

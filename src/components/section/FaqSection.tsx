@@ -17,10 +17,13 @@ import SectionTitle from "../ui/section-title";
 import SectionDescription from "../ui/section-description";
 import Image from "next/image";
 import FaqImage from "@/assets/faq-img.png";
+import DotDecoration from "../ui/dot-decoration";
 
 const FaqSection = () => {
   const [open, setOpen] = useState<number | null>(0);
-  const { ref: faqRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: faqRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
 
   const faqs = [
     {
@@ -61,8 +64,8 @@ const FaqSection = () => {
     },
   ];
   return (
-    <section id="faq" ref={faqRef} className="py-20">
-      <div className="container-px mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.2fr]">
+    <section id="faq" ref={faqRef} className="py-20 relative">
+      <div className="container-px mx-auto grid max-w-7xl gap-8 lg:gap-12 lg:grid-cols-[1fr_1.2fr]">
         <div
           className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
@@ -89,6 +92,9 @@ const FaqSection = () => {
             height={100}
           />
           <div className="-mt-12 z-5 relative w-6/7 mx-auto">
+            <div className="absolute -bottom-2 -left-8 lg:-bottom-5 lg:-left-16 hidden md:block">
+              <DotDecoration aside={6} down={3}></DotDecoration>
+            </div>
             <div className="flex items-center flex-row gap-4 bg-primary-soft rounded-2xl p-5">
               <div>
                 <div className="flex place-items-center w-10 h-10 rounded-full bg-primary/50">

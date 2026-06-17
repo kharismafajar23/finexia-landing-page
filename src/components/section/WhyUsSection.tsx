@@ -17,9 +17,12 @@ import SectionDescription from "../ui/section-description";
 import Image from "next/image";
 import WhyUsImage from "@/assets/why-choose-us-img.png";
 import LogoRed from "@/assets/logo/logo-red.png";
+import DotDecoration from "../ui/dot-decoration";
 
 const WhyUsSection = () => {
-  const { ref: whyUsRef, isVisible } = useScrollReveal<HTMLElement>({ rootMargin: "-120px 0px" });
+  const { ref: whyUsRef, isVisible } = useScrollReveal<HTMLElement>({
+    rootMargin: "-120px 0px",
+  });
   const features = [
     {
       icon: <Puzzle />,
@@ -74,7 +77,20 @@ const WhyUsSection = () => {
       ref={whyUsRef}
       className="relative overflow-hidden py-20"
     >
-      <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-primary-soft blur-3xl" />
+      <Image
+        src="/img/decoration/decoration-3.png"
+        alt="decoration"
+        width={400}
+        height={400}
+        className="absolute top-120 md:left-10 md:top-90 md:w-full lg:w-auto lg:left-90"
+      ></Image>
+      <div className="absolute bottom-5 right-5 sm:bottom-10 sm:right-10 lg:bottom-30 lg:right-70">
+        <DotDecoration
+          aside={8}
+          down={4}
+          backgroundClass="bg-slate-800"
+        ></DotDecoration>
+      </div>
       <div className="container-px relative mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-10">
           <div

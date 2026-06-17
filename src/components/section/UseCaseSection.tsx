@@ -136,8 +136,15 @@ const UseCaseSection = () => {
   ];
 
   return (
-    <section id="use-case" ref={useCaseRef} className="py-20">
-      <div className="container-px mx-auto max-w-7xl">
+    <section id="use-case" ref={useCaseRef} className="py-20 overflow-hidden">
+      <div className="container-px mx-auto max-w-7xl relative">
+        <Image
+          src="/img/decoration/decoration-7.png"
+          alt="hero-decoration"
+          width={400}
+          height={400}
+          className="absolute left-0 hidden lg:block"
+        ></Image>
         <div
           className={`mx-auto max-w-3xl text-center transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
